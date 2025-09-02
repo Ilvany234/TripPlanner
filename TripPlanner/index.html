@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripPlanner</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="imagen">
+      <img src="assets/img/inicio.jpg" alt="imagen inicio">
+    <div>
+        <h1>Bienvenido a TripPlanner</h1>
+    </div>
+  </section>
+
+  <!--Imagen de inicio-->
+
+
+  <!-- Formulario de planificación -->
+  <section id="plan-form">
+    <h2>Planifica tu viaje</h2>
+    <form id="tripForm">
+      <label for="budget">Presupuesto</label>
+      <input type="number" id="budget" name="budget" placeholder="Ingresa tu presupuesto" required>
+      
+      <label for="tripType">Tipo de viaje</label>
+      <select id="tripType" name="tripType">
+        <option value="family">Viaje Familiar</option>
+        <option value="couple">Viaje en Pareja</option>
+        <option value="solo">Viaje Solo</option>
+      </select>
+      
+      <label for="interests">Intereses</label>
+      <input type="text" id="interests" name="interests" placeholder="Ej. Aventura, Cultura, Relax" required>
+      
+      <label for="destination">Destino</label>
+      <input type="text" id="destination" name="destination" placeholder="Ej. Paris, Bali" required>
+
+      <button type="submit">Generar Plan</button>
+    </form>
+  </section>
+
+  <!-- Resultados del plan -->
+  <section id="results">
+    <h2>Tu Plan de Viaje</h2>
+    <div id="planDetails"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
