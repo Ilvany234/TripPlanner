@@ -1,53 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TripPlanner</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- Header -->
-  <section class="imagen">
-      <img src="assets/img/inicio.jpg" alt="imagen inicio">
-    <div>
-        <h1>Bienvenido a TripPlanner</h1>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="overlay">
+      <h1>Es hora de tu <span class="highlight">próxima aventura</span></h1>
+      <p>Permítenos planificarla para ti</p>
+      <a href="#" class="btn">Reserva ahora</a>
+    </div>
+  </header>
+
+  <!-- Sección Viajar es fácil -->
+  <section class="easy-travel">
+    <div class="content">
+      <div class="text">
+        <h2>📍 Viajar es fácil</h2>
+        <p>
+          En TripPlanner, somos apasionados por descubrir y compartir la belleza única de Chile con cada viajero. Nuestra misión es facilitar experiencias personalizadas que conecten a los turistas con la cultura, naturaleza y gastronomía local.
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn-outline">Últimas ofertas</a>
+          <a href="#" class="btn-outline">Promociones</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="https://source.unsplash.com/400x300/?travel" alt="viaje"/>
+      </div>
     </div>
   </section>
 
-  <!--Imagen de inicio-->
-
-
-  <!-- Formulario de planificación -->
-  <section id="plan-form">
-    <h2>Planifica tu viaje</h2>
-    <form id="tripForm">
-      <label for="budget">Presupuesto</label>
-      <input type="number" id="budget" name="budget" placeholder="Ingresa tu presupuesto" required>
-      
-      <label for="tripType">Tipo de viaje</label>
-      <select id="tripType" name="tripType">
-        <option value="family">Viaje Familiar</option>
-        <option value="couple">Viaje en Pareja</option>
-        <option value="solo">Viaje Solo</option>
-      </select>
-      
-      <label for="interests">Intereses</label>
-      <input type="text" id="interests" name="interests" placeholder="Ej. Aventura, Cultura, Relax" required>
-      
-      <label for="destination">Destino</label>
-      <input type="text" id="destination" name="destination" placeholder="Ej. Paris, Bali" required>
-
-      <button type="submit">Generar Plan</button>
-    </form>
+  <!-- Promociones -->
+  <section class="promotions">
+    <h2>Promoción de ofertas de verano</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?nature" alt="">
+        <h3>Salida a la naturaleza</h3>
+        <p>Comienza en $550.000</p>
+        <ul>
+          <li>Pasaje aéreo ida y vuelta</li>
+          <li>Habitación doble</li>
+          <li>Tour por la naturaleza</li>
+        </ul>
+        <a href="#" class="btn">Reserva ahora</a>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?couple" alt="">
+        <h3>Escapada romántica</h3>
+        <p>Comienza en $785.000</p>
+        <ul>
+          <li>Comidas incluidas</li>
+          <li>Spa y masaje</li>
+          <li>Habitación doble</li>
+        </ul>
+        <a href="#" class="btn">Reserva ahora</a>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?family" alt="">
+        <h3>Vacaciones familiares</h3>
+        <p>Comienza en $1.000.000</p>
+        <ul>
+          <li>Suite familiar</li>
+          <li>Actividades grupales</li>
+        </ul>
+        <a href="#" class="btn">Reserva ahora</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Resultados del plan -->
-  <section id="results">
-    <h2>Tu Plan de Viaje</h2>
-    <div id="planDetails"></div>
+  <!-- Servicios -->
+  <section class="services">
+    <h2>Nos encargamos de tu viaje por ti</h2>
+    <div class="grid">
+      <div class="service">
+        <h3>Reserva de vuelo</h3>
+        <p>Tarifas exclusivas y descuentos especiales.</p>
+      </div>
+      <div class="service">
+        <h3>Tours y actividades</h3>
+        <p>Excursiones, visitas culturales y gastronómicas.</p>
+      </div>
+      <div class="service">
+        <h3>Traslados al aeropuerto</h3>
+        <p>Servicios seguros y puntuales.</p>
+      </div>
+      <div class="service">
+        <h3>Reservas de hotel</h3>
+        <p>Hoteles boutique y resorts de lujo.</p>
+      </div>
+    </div>
   </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <h2>Nuestros viajeros favoritos</h2>
+    <div class="grid">
+      <blockquote>
+        <p>"Gracias a TripPlanner, nuestro viaje a Torres del Paine fue inolvidable."</p>
+        <footer>— María López, Santiago</footer>
+      </blockquote>
+      <blockquote>
+        <p>"Definitivamente volveré a usar TripPlanner. ¡Todo perfecto!"</p>
+        <footer>— Carlos Rojas, Valparaíso</footer>
+      </blockquote>
+      <blockquote>
+        <p>"Una experiencia increíble. 100% recomendados."</p>
+        <footer>— Fernanda Castillo, Concepción</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="info">
+        <h3>TripPlanner</h3>
+        <p>Calle 12 #34-56<br>Santiago, Chile</p>
+        <p><strong>Tel:</strong> (+56 9) 8234 5678</p>
+        <p><strong>Email:</strong> hola@sitioincreible.co</p>
+      </div>
+      <div class="hours">
+        <h4>Horario de oficina</h4>
+        <ul>
+          <li>Lunes a Viernes: 8:00 - 19:00</li>
+          <li>Sábado: 8:00 - 12:00</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
