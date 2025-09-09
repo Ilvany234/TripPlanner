@@ -8,7 +8,6 @@
   z-index: -1; /* detrás del formulario */
 }
 
-
 /* Formulario centrado */
 .form-container {
   position: relative;
@@ -17,16 +16,6 @@
   margin: 50px auto;
   padding: 20px;
 }
-/* ==== Contenedor principal ==== */
-/*.form-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(to right, #ffb443, #fff3e0);
-}*/
-
 
 .form-box {
   padding: 3rem; /* más espacio interno */
@@ -34,13 +23,6 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.95);
 }
-/* ==== Caja del formulario ==== */
-/*.form-box {
-  max-width: 500px;
-  width: 100%;
-  background: #fff;
-  border-top: 5px solid #ff9900;
-}*/
 
 .form-box h2 {
   text-align: center;
