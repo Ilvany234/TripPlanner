@@ -1,8 +1,11 @@
 /* ==== Estilos para el formulario de comentarios ==== */
+
+/* Clase para texto de color naranja */
 .text-orange {
   color: #ff9900;
 }
 
+/* Contenedor flexible para las estrellas de calificación */
 .rating {
   display: flex;
   justify-content: space-between;
@@ -10,10 +13,12 @@
   margin: 0 auto;
 }
 
+/* Oculta los inputs de radio originales */
 .rating input {
   display: none;
 }
 
+/* Estilos para las etiquetas que actuarán como estrellas de calificación */
 .rating label {
   cursor: pointer;
   width: 40px;
@@ -26,17 +31,19 @@
   transition: background 0.3s;
 }
 
+/* Estilos para la estrella seleccionada o al pasar el cursor */
 .rating input:checked + label,
 .rating label:hover {
   background: #ff9900;
   color: white;
 }
 
+/* Sección de agradecimiento inicialmente oculta */
 .thank-you {
   display: none;
 }
 
-/* Ajustes responsivos */
+/* Ajustes responsivos para dispositivos móviles */
 @media (max-width: 600px) {
   .rating label {
     width: 35px;

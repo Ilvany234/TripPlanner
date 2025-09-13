@@ -1,4 +1,4 @@
-// Datos de planes y servicios
+// ==================== DATOS DE PLANES Y SERVICIOS ====================
 const planes = {
   naturaleza: {
     precio: 500,
@@ -26,23 +26,28 @@ const planes = {
   }
 };
 
-// Elementos del formulario
-const planSelect = document.getElementById("plan");
-const serviciosContainer = document.getElementById("serviciosContainer");
-const resumenDiv = document.getElementById("resumen");
-const reservaForm = document.getElementById("reservaForm");
-let serviciosSeleccionados = [];
+// ==================== ELEMENTOS DEL FORMULARIO ====================
+const planSelect = document.getElementById("plan"); // selector de plan
+const serviciosContainer = document.getElementById("serviciosContainer"); // contenedor para los servicios
+const resumenDiv = document.getElementById("resumen"); // resumen dinámico
+const reservaForm = document.getElementById("reservaForm"); // formulario de reserva
+let serviciosSeleccionados = []; // array para almacenar servicios elegidos
 
-// Mostrar servicios según plan
+// ==================== MOSTRAR SERVICIOS SEGÚN PLAN ====================
 function mostrarServicios(plan) {
-  serviciosContainer.innerHTML = "";
-  serviciosSeleccionados = [];
+  serviciosContainer.innerHTML = ""; // limpiar contenedor
+  serviciosSeleccionados = []; // reiniciar seleccionados
 
+  // recorrer servicios del plan elegido
   planes[plan].servicios.forEach((servicio, index) => {
-    const disponibilidad = Math.floor(Math.random() * 5) + 1; // aleatoria 1-5
+    // generar disponibilidad aleatoria entre 1 y 5
+    const disponibilidad = Math.floor(Math.random() * 5) + 1;
 
+    // crear div contenedor del servicio
     const div = document.createElement("div");
     div.classList.add("form-check");
+
+    // crear checkbox + etiqueta con disponibilidad
     div.innerHTML = `
       <input class="form-check-input servicio-check" type="checkbox" 
              value="${servicio.precio}" id="servicio${index}" checked>
@@ -53,95 +58,103 @@ function mostrarServicios(plan) {
         </span>
       </label>
     `;
-    serviciosContainer.appendChild(div);
 
-    serviciosSeleccionados.push(servicio);
+    serviciosContainer.appendChild(div); // agregar al DOM
+    serviciosSeleccionados.push(servicio); // añadir al array
   });
 
-  actualizarResumen();
+  actualizarResumen(); // actualizar total
 }
 
-// Calcular y mostrar resumen
+// ==================== CALCULAR Y MOSTRAR RESUMEN ====================
 function actualizarResumen() {
-  const plan = planSelect.value;
-  let total = planes[plan].precio;
+  const plan = planSelect.value; // obtener plan actual
+  let total = planes[plan].precio; // precio base del plan
   let detalle = `<strong>Plan seleccionado:</strong> ${plan.toUpperCase()} - $${planes[plan].precio}<br><ul>`;
 
+  // recorrer todos los checkboxes de servicios
   document.querySelectorAll(".servicio-check").forEach((check, i) => {
     if (check.checked) {
+      // agregar servicio al detalle y sumar precio
       detalle += `<li>${planes[plan].servicios[i].nombre} - $${planes[plan].servicios[i].precio}</li>`;
       total += planes[plan].servicios[i].precio;
     }
   });
 
   detalle += `</ul><strong>Total estimado: $${total}</strong>`;
-  resumenDiv.innerHTML = detalle;
+  resumenDiv.innerHTML = detalle; // mostrar en el DOM
 }
 
-// Eventos
+// ==================== EVENTOS ====================
+// Cuando cambia el plan seleccionado
 planSelect.addEventListener("change", () => mostrarServicios(planSelect.value));
+
+// Cuando cambia algún servicio (checkbox)
 document.addEventListener("change", (e) => {
   if (e.target.classList.contains("servicio-check")) {
     actualizarResumen();
   }
 });
 
-// Inicializar
+// Inicializar con el plan por defecto
 mostrarServicios(planSelect.value);
 
 //========================================================================
-// VALIDACIÓN FORMULARIO
-
+// ==================== VALIDACIÓN DEL FORMULARIO ====================
 reservaForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // Evita envío automático
+  e.preventDefault(); // evita que se envíe automáticamente
 
-  // Obtener valores del formulario
+  // Obtener valores de los campos
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const date = document.getElementById("date").value;
   const people = parseInt(document.getElementById("people").value);
 
-  // Validaciones
+  // Validación: nombre no vacío
   if (name === "") {
     alert("Por favor ingresa tu nombre completo.");
     return;
   }
 
+  // Validación: email con formato correcto
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
     alert("Por favor ingresa un correo electrónico válido.");
     return;
   }
 
+  // Validación: teléfono con caracteres permitidos
   const phonePattern = /^[0-9\s+()-]{8,}$/;
   if (!phonePattern.test(phone)) {
     alert("Por favor ingresa un número de contacto válido.");
     return;
   }
 
+  // Validación: fecha no puede ser anterior a hoy
   const today = new Date();
   const selectedDate = new Date(date);
-  today.setHours(0,0,0,0); // Ignorar horas
+  today.setHours(0,0,0,0); // ignorar horas
   if (selectedDate < today) {
     alert("La fecha del viaje no puede ser anterior a hoy.");
     return;
   }
 
+  // Validación: al menos 1 persona
   if (isNaN(people) || people < 1) {
     alert("Por favor ingresa al menos 1 persona.");
     return;
   }
 
-  // Opcional: validar que al menos un servicio esté seleccionado
+  // Validación: al menos un servicio seleccionado
   const anyChecked = Array.from(document.querySelectorAll(".servicio-check")).some(cb => cb.checked);
   if (!anyChecked) {
     alert("Debes seleccionar al menos un servicio del plan.");
     return;
   }
 
-  // Si todo está correcto
+  // Si todas las validaciones pasan
   alert("¡Reserva enviada! Nos pondremos en contacto contigo en las próximas horas.");
-  reservaForm.reset();
-  mostrarServicios(planSelect.value); // reiniciar servicios
+  reservaForm.reset(); // limpiar formulario
+  mostrarServicios(planSelect.value); // reiniciar servicios y resumen
 });

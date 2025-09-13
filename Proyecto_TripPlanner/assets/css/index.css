@@ -1,169 +1,171 @@
 /* ==== HERO ==== */
 .hero {
+  /* Imagen de fondo que cubre toda la sección */
   background: url('https://images.pexels.com/photos/615060/pexels-photo-615060.jpeg') no-repeat center center/cover;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  height: 80vh; /* Altura de la sección */
+  display: flex; /* Usamos flexbox */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  position: relative; /* Permite posicionar elementos dentro */
 }
 
 .logo {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff9900;
-  text-decoration: none;
-  background: rgba(0,0,0,0.5);
-  padding: 8px 12px;
-  border-radius: 5px;
+  position: absolute; /* Se coloca en una posición fija dentro del hero */
+  top: 20px; /* Distancia desde arriba */
+  right: 30px; /* Distancia desde la derecha */
+  font-size: 1.5rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  color: #ff9900; /* Color del texto */
+  text-decoration: none; /* Quita el subrayado */
+  background: rgba(0,0,0,0.5); /* Fondo negro semitransparente */
+  padding: 8px 12px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
 }
 
 .logo:hover {
+  /* Cambio de color de fondo al pasar el mouse */
   background: rgba(0,0,0,0.7);
 }
 
 .hero .overlay {
-  background-color: rgba(0,0,0,0.5);
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  color: #fff;
+  background-color: rgba(0,0,0,0.5); /* Fondo oscuro semitransparente */
+  padding: 2rem; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  text-align: center; /* Texto centrado */
+  color: #fff; /* Texto blanco */
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3rem; /* Tamaño grande del título */
 }
 
 .hero .highlight {
-  color: #ff9900;
+  color: #ff9900; /* Texto resaltado en naranja */
 }
 
 /* ==== SECCIONES ==== */
 section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
+  padding: 4rem 2rem; /* Espaciado interno */
+  max-width: 1200px; /* Ancho máximo */
+  margin: auto; /* Centra la sección */
+  text-align: center; /* Texto centrado */
 }
 
 /* ==== TARJETAS ==== */
 .cards {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  display: flex; /* Diseño flexible */
+  gap: 2rem; /* Separación entre tarjetas */
+  justify-content: center; /* Centra las tarjetas */
+  flex-wrap: wrap; /* Permite que bajen de línea */
+  margin-top: 2rem; /* Espacio superior */
 }
 
 .card {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta desbordes */
+  width: 300px; /* Ancho fijo */
+  text-align: center; /* Texto centrado */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra ligera */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
 }
 
 .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  width: 100%; /* Imagen ocupa todo el ancho */
+  height: 200px; /* Alto fijo */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
 }
 
 .card h3 {
-  margin: 12px 0 6px;
-  font-size: 18px;
-  color: #333;
+  margin: 12px 0 6px; /* Márgenes */
+  font-size: 18px; /* Tamaño del título */
+  color: #333; /* Color oscuro */
 }
 
 .card p {
-  font-size: 14px;
-  color: #666;
-  padding: 0 12px 16px;
+  font-size: 14px; /* Texto más pequeño */
+  color: #666; /* Gris */
+  padding: 0 12px 16px; /* Espaciado interno */
 }
 
 .card ul {
-  text-align: left;
-  padding: 0 20px 16px;
-  list-style-type: disc;
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding: 0 20px 16px; /* Espaciado interno */
+  list-style-type: disc; /* Viñetas redondas */
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+.easy-travel .card:hover {
+  transform: none; /* No se mueve */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Mantiene la sombra original */
 }
 
 /* ==== PROMOCIONES ==== */
 .promotions {
-  background: #4a3f2b;
-  color: #fff;
+  background: #4a3f2b; /* Fondo marrón oscuro */
+  color: #fff; /* Texto blanco */
 }
 
 .promotions .card {
-  background: #fff;
-  color: #000;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  min-height: 400px; /* Altura mínima */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Elementos en columna */
+  justify-content: space-between; /* Distribuye el espacio */
 }
 
 /* ==== SERVICIOS ==== */
 .services-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
+  display: flex; /* Diseño flexible */
+  flex-wrap: wrap; /* Permite que los elementos bajen de línea */
+  gap: 2rem; /* Espaciado entre elementos */
+  justify-content: center; /* Centra los elementos */
+  margin-top: 2rem; /* Espaciado superior */
 }
 
 .services-cards .card {
-  width: 45%;
-  background: #f4f4f4;
+  width: 45%; /* Ancho del 45% */
+  background: #f4f4f4; /* Fondo gris claro */
 }
 
 @media (max-width: 900px) {
   .services-cards .card {
-    width: 100%;
+    width: 100%; /* En pantallas pequeñas ocupa todo el ancho */
   }
 }
 
 /* ==== TESTIMONIOS ==== */
 .testimonials-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  display: flex; /* Diseño flexible */
+  flex-wrap: wrap; /* Permite múltiples filas */
+  gap: 2rem; /* Espaciado entre tarjetas */
+  justify-content: center; /* Centrado */
 }
 
 .testimonial-card {
-  background: #ffe0b2;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 250px;
-  text-align: left;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #ffe0b2; /* Fondo color durazno */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  width: 250px; /* Ancho fijo */
+  text-align: left; /* Texto alineado a la izquierda */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra ligera */
 }
 
 .testimonial-footer {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: flex; /* Elementos en fila */
+  align-items: center; /* Centra verticalmente */
+  gap: 0.5rem; /* Espaciado entre elementos */
 }
 
 .testimonial-footer img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 40px; /* Ancho de la foto */
+  height: 40px; /* Alto de la foto */
+  border-radius: 50%; /* Imagen circular */
+  object-fit: cover; /* Ajusta la imagen */
 }
 
 .testimonial-footer span {
-  font-weight: bold;
-  font-size: 14px;
-  color: #555;
+  font-weight: bold; /* Negrita */
+  font-size: 14px; /* Tamaño del texto */
+  color: #555; /* Gris oscuro */
 }

@@ -18,6 +18,7 @@
   padding: 20px;
 }
 
+/* Caja principal del formulario con estilos visuales */
 .form-box {
   padding: 3rem; /* más espacio interno */
   border-radius: 15px;
@@ -25,6 +26,7 @@
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+/* Estilo para el título del formulario */
 .form-box h2 {
   text-align: center;
   font-weight: bold;
@@ -32,6 +34,7 @@
 }
 
 /* ==== Inputs personalizados ==== */
+/* Efecto de foco en los campos del formulario */
 .form-control:focus {
   border-color: #ff9900;
   box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.25);
@@ -45,6 +48,7 @@
   padding: 12px;
 }
 
+/* Efecto hover para el botón */
 .btn:hover {
   background-color: #e68a00;
 }
@@ -63,6 +67,7 @@
   border-radius: 5px;
 }
 
+/* Efecto hover para el logo */
 .logo:hover {
   background: rgba(0,0,0,0.7);
 }
