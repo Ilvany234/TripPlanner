@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentarios y Sugerencias - TripPlanner</title>
+  <!-- Carga de Bootstrap desde CDN para estilos rápidos y responsivos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados del proyecto -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/formulario.css">
+</head>
+<body>
+
+  <!-- Canvas de fondo (efecto visual animado con JS) -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Logo que redirige al inicio -->
+  <a href="index.html" class="logo">TripPlanner</a>
+
+  <!-- Contenedor principal del formulario -->
+  <div class="form-container">
+    <div class="form-box shadow-lg p-4 rounded"><!-- Caja con sombra y bordes redondeados -->
+      <h2 class="mb-4">Comentarios y Sugerencias 💬</h2>
+      <p class="text-center mb-4">Tu opinión es importante para nosotros. Ayúdanos a mejorar.</p>
+
+      <!-- Formulario de comentarios -->
+      <form id="comentariosForm">
+        <!-- Sección: Datos personales -->
+        <h5 class="text-orange"><strong>Datos personales</strong></h5>
+        <div class="mb-3">
+          <label class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="name" required> <!-- Campo obligatorio -->
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" required> <!-- Validación HTML5 para email -->
+        </div>
+
+        <!-- Sección: Tipo de comentario -->
+        <h5 class="text-orange mt-4"><strong>Tipo de comentario</strong></h5>
+        <div class="mb-3">
+          <select class="form-select" id="tipo"> <!-- Lista desplegable -->
+            <option value="sugerencia">Sugerencia</option>
+            <option value="comentario">Comentario</option>
+            <option value="felicitacion">Felicitación</option>
+            <option value="problema">Reportar un problema</option>
+            <option value="otros">Otros</option>
+          </select>
+        </div>
+
+        <!-- Campo: Asunto -->
+        <div class="mb-3">
+          <label class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="asunto" required>
+        </div>
+
+        <!-- Campo: Mensaje -->
+        <div class="mb-3">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="5" required></textarea>
+        </div>
+
+        <!-- Sección: Calificación con radios -->
+        <h5 class="text-orange mt-4"><strong>Calificación</strong></h5>
+        <div class="rating mb-4">
+          <!-- Cada input radio representa una puntuación -->
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1">1</label>
+          
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2">2</label>
+          
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3">3</label>
+          
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4">4</label>
+          
+          <input type="radio" id="star5" name="rating" value="5" checked>
+          <label for="star5">5</label>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn">Enviar comentario</button>
+      </form>
+
+      <!-- Mensaje de agradecimiento (se muestra solo tras enviar el formulario) -->
+      <div id="thankYou" class="thank-you mt-4 p-3 bg-light rounded text-center" style="display: none;">
+        <h4 class="text-success">¡Gracias por tus comentarios!</h4>
+        <p class="mb-0">Hemos recibido tu mensaje y lo valoramos mucho.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <!-- Parte superior del footer -->
+    <div class="footer-top text-center mb-3">
+      <h2 class="logo-footer">TripPlanner</h2>
+    </div>
+
+    <!-- Contenido principal del footer -->
+    <div class="footer-content d-flex justify-content-between align-items-center">
+      <!-- Información de contacto -->
+      <div class="footer-left">
+        <p>Calle 12 #34-56<br>Santiago, Chile</p>
+        <p><strong>Tel:</strong> (+56 9) 8234 5678</p>
+        <p><strong>Email:</strong> tripplanner@aia.com</p>
+      </div>
+
+      <!-- Horarios -->
+      <div class="footer-right text-end">
+        <h5>Horario de oficina</h5>
+        <p>Lunes a Viernes: 8:00 - 19:00</p>
+        <p>Sábado: 8:00 - 12:00</p>
+      </div>
+    </div>
+
+    <!-- Parte inferior del footer -->
+    <div class="footer-bottom text-center mt-3">
+      <p>© 2025 TripPlanner. Todos los derechos reservados</p>
+      <p>Hecho con ❤️ para viajeros como tú</p>
+    </div>
+  </footer>
+
+  <!-- Script de Bootstrap (funcionalidades dinámicas como modales, dropdowns, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script personalizado para animar el fondo -->
+  <script src="assets/js/bgCanvas.js"></script>
+  <script>
+    // Validación y envío del formulario
+    document.getElementById('comentariosForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que se recargue la página al enviar
+      
+      // Normalmente aquí se enviaría la información al servidor
+      // En este caso solo ocultamos el formulario y mostramos un mensaje de agradecimiento
+      
+      document.getElementById('comentariosForm').style.display = 'none'; // Oculta formulario
+      document.getElementById('thankYou').style.display = 'block'; // Muestra mensaje de agradecimiento
+      
+      // Resetea los campos del formulario
+      this.reset();
+    });
+  </script>
+</body>
+</html>
