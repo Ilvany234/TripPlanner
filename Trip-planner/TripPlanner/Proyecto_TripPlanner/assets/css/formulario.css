@@ -1,0 +1,73 @@
+/* Fondo del canvas ocupa toda la pantalla */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* detrás del formulario */
+}
+
+
+/* Formulario centrado */
+.form-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* Caja principal del formulario con estilos visuales */
+.form-box {
+  padding: 3rem; /* más espacio interno */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Estilo para el título del formulario */
+.form-box h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #ff9900;
+}
+
+/* ==== Inputs personalizados ==== */
+/* Efecto de foco en los campos del formulario */
+.form-control:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.25);
+}
+
+/* ==== Botón principal ==== */
+.btn {
+  background-color: #ff9900;
+  border: none;
+  font-weight: bold;
+  padding: 12px;
+}
+
+/* Efecto hover para el botón */
+.btn:hover {
+  background-color: #e68a00;
+}
+
+/* ==== Logo en la esquina superior derecha ==== */
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff9900;
+  text-decoration: none;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* Efecto hover para el logo */
+.logo:hover {
+  background: rgba(0,0,0,0.7);
+}
